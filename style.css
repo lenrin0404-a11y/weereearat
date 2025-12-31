@@ -1,0 +1,249 @@
+.design {
+  /* border: 5px solid black; */
+  /* background-color: rgb(226, 25, 25); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
+  position: relative;
+
+  .logo {
+    /* border: 5px solid black; */
+    left: 0vw;
+    position: absolute;
+  }
+
+  .menu {
+    /* border: 5px solid black; */
+
+    .me {
+      /* background-color: rgb(103, 57, 188); */
+      /* border: 5px solid black; */
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .work {
+      /* background-color: rgb(223, 221, 108); */
+      /* border: 5px solid black; */
+      margin: 10px;
+      color: black;
+      display: inline-block;
+    }
+
+    .contact {
+      /* background-color: rgb(240, 8, 8); */
+      /* border: 5px solid black; */
+      margin: 10px;
+      color: rgb(17, 13, 13);
+      display: inline-block;
+    }
+    .interwork {
+      /* background-color: rgb(67, 248, 134); */
+      /* border: 5px solid black; */
+      margin: 10px;
+      color: rgb(17, 13, 13);
+      display: inline-block;
+    }
+  }
+}
+
+hr {
+  border: 2px solid rgb(8, 7, 7);
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+  animation-name: op;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  .mid_intro {
+    /* background-color: rgb(240, 8, 8); */
+    /* border: 5px solid black; */
+    margin: 10px;
+    color: rgb(17, 13, 13);
+    height: 100px;
+  }
+
+  .mid_pic {
+    /* background-color: rgb(255, 255, 255); */
+    /* border: 5px solid black; */
+    width: 1000px;
+    height: 600px;
+    margin: 10px;
+  }
+}
+.bottom {
+  display: flex;
+  /* background-color: rgb(182, 119, 119); */
+  /* border: 5px solid black; */
+  align-items: center;
+
+  .bottom_intro {
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    margin: 10px;
+    color: rgb(17, 13, 13);
+    height: 100px;
+  }
+
+  .bottom_pic {
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    width: 1000px;
+    height: 600px;
+    outline-color: blue;
+    outline-width: 10px;
+    margin: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  height: 100px;
+  filter: grayscale(1);
+  /* background-color: rgb(182, 119, 119); */
+  /* border: 5px solid black; */
+  justify-content: center;
+  align-items: center;
+
+  #ig {
+    display: flex;
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    position: relative;
+    right: 65px;
+  }
+
+  #fb {
+    display: flex;
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    position: relative;
+    right: 35px;
+  }
+
+  #x {
+    display: flex;
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    position: relative;
+    right: 5px;
+  }
+  #email {
+    display: flex;
+    /* background-color: rgb(182, 119, 119); */
+    /* border: 5px solid black; */
+    position: relative;
+    right: -25px;
+  }
+/* 隱藏 checkbox */
+#popupToggle {
+  display: none;
+}
+
+/* 預設不顯示 */
+.popup {
+  display: none;
+}
+
+/* 當 checkbox 被勾選時顯示 */
+#popupToggle:checked ~ .popup {
+  display: block;
+}
+
+/* 半透明背景 */
+.popup-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 視窗本體 */
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* 關閉按鈕 */
+.close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 游標提示 */
+#email {
+  cursor: pointer;
+}
+
+}
+
+.allright {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 30px;
+}
+
+/* 全域設定 */
+HTML CSSResult Skip Results Iframe EDIT ON a {
+  text-decoration: none;
+}
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+  color: #010101;
+  background-color: red;
+}
+a:hover {
+  text-decoration: none;
+  background-color: #fafafa;
+  color: rgb(77, 77, 77);
+}
+a:active {
+  text-decoration: none;
+  background-color: gray;
+  color: #fafafa;
+}
+
+/* a:hover {
+  text-decoration: none;
+  background-color: #fafafa;
+  color: rgb(77, 77, 77);
+} */
+
+h1:hover {
+  color: rgb(201, 9, 9);
+  transform: translate(15%, 5%);
+  transition: all 0.2s;
+}
+
+@keyframes op {
+  from {
+    opacity: 10%;
+    transform: translate(30%);
+  }
+
+  to {
+    opacity: 95%;
+    transform: translate(0%);
+  }
+  
+}

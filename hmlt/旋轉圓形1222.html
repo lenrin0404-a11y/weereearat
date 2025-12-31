@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>3D 彩色旋轉圓形</title>
+
+<style>
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+}
+
+/* 外層：負責 3D 旋轉 */
+.scene {
+  width: 260px;
+  height: 260px;
+  transform-style: preserve-3d;
+  animation: rotate3d 10s linear infinite;
+}
+
+/* 圓形本體 */
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    magenta,
+    red
+  );
+  filter: blur(0.3px);
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.4),
+    inset 0 0 30px rgba(255,255,255,0.6);
+}
+
+/* 3D 旋轉動畫 */
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="circle"></div>
+  </div>
+</body>
+</html>

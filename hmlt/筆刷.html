@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Airbrush Brush</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #222;
+        }
+        canvas {
+            display: block;
+            background: #fff;
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Resize canvas to full window
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resize);
+        resize();
+
+        // Airbrush parameters
+        let isDrawing = false;
+        let mouseX = 0;
+        let mouseY = 0;
+        const sprayDensity = 60;    // amount of dots per spray
+        const sprayRadius = 25;     // spray radius
+
+        canvas.addEventListener("mousedown", () => { 
+            isDrawing = true; 
+            spray();
+        });
+
+        canvas.addEventListener("mouseup", () => { 
+            isDrawing = false; 
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // The spray effect
+        function spray() {
+            if (!isDrawing) return;
+
+            for (let i = 0; i < sprayDensity; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const radius = Math.random() * sprayRadius;
+                const offsetX = Math.cos(angle) * radius;
+                const offsetY = Math.sin(angle) * radius;
+
+                ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+                ctx.fillRect(mouseX + offsetX, mouseY + offsetY, 1.5, 1.5);
+            }
+
+            requestAnimationFrame(spray);
+        }
+    </script>
+</body>
+</html>

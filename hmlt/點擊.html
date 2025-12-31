@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>點擊次數計算器</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      user-select: none;
+    }
+
+    #counter {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+    }
+
+    #startBtn {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    #hint {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startBtn">開始</button>
+  <div id="counter">點擊次數：0</div>
+  <div id="hint">請先按「開始」，再點擊畫面</div>
+
+  <script>
+    let count = 0;
+    let isStarted = false;
+
+    const counterEl = document.getElementById("counter");
+    const startBtn = document.getElementById("startBtn");
+
+    // 按下開始鍵
+    startBtn.addEventListener("click", () => {
+      isStarted = true;
+      count = 0;
+      counterEl.textContent = "點擊次數：0";
+      startBtn.textContent = "計算中...";
+      startBtn.disabled = true;
+    });
+
+    // 計算螢幕點擊次數
+    document.addEventListener("click", (event) => {
+      if (!isStarted) return;
+      if (event.target === startBtn) return; // 避免算到開始鍵
+
+      count++;
+      counterEl.textContent = "點擊次數：" + count;
+    });
+  </script>
+
+</body>
+</html>

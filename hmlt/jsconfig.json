@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6"
+  },
+  "include": [
+    "*.js",
+    "**/*.js",
+    "p5types/global.d.ts"
+, "../w4_ball_offical.js", "../w9.js"  ]
+}
